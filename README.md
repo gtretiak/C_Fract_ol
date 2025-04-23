@@ -55,7 +55,7 @@ Multibrot - realtive to mandelbrot, but with variety of shapes depending on the 
 ### Controls
 1. Mouse Wheel: Zoom in and out (with centering on the current mouse position and color palette shifting)
 2. Arrow Keys: Move the view
-3. + and - keys - Zoom in and out
+3. + and - keys - Increasing/decreasing complexity (depth)
 4. P Key: Shift exponent
 5. ESC, q Key: Exit the program
 
