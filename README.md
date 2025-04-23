@@ -5,35 +5,34 @@
 Fract'ol is a computer graphics project focused on rendering beautiful mathematical fractals. The program should allow users to explore infinitely complex patterns by visualizing different fractal sets with interactive zoom capabilities and colorful rendering. This project demonstrates fundamental principles of computer graphics, complex number mathematics, and event-driven programming.
 
 ### Project Purpose & Objectives
-    Gain proficiency with the MiniLibX (X11 simplified analog) graphics library
-    Apply complex number mathematics in a practical application
-    Implement efficient rendering algorithms and optimization techniques
-    Develop skills in event handling and user interaction
-    Create visually appealing graphical output with color management
+    1. Gain proficiency with the MiniLibX (X11 simplified analog) graphics library
+    2. Apply complex number mathematics in a practical application
+    3. Implement efficient rendering algorithms and optimization techniques
+    4. Develop skills in event handling and user interaction
+    5. Create visually appealing graphical output with color management
 
 ### Key Concepts & Features
 Fractals are infinitely complex patterns that are self-similar across different scales. The project focuses on implementing algorithms to render these mathematical objects by:
 
-    Calculating complex number iterations using the specific formula for each fractal type
-    Complex number mathematics (real and imaginary components)
-    Determining pixel colors based on iteration counts and escape values
-    Implementing precision zoom functionality to explore fractal details
+    1. Calculating complex number iterations using the specific formula for each fractal type
+    2. Complex number mathematics (real and imaginary components)
+    3. Determining pixel colors based on iteration counts and escape values
+    4. Implementing precision zoom functionality to explore fractal details
 
 ### Core Functionality
-
-    Rendering of multiple fractal types (Mandelbrot and Julia sets required, Multibrot is a bonus)
-    Near-infinite zoom capability with the mouse wheel
-    Double-precision floating-point calculations for deep zoom accuracy
-    Parameter customization for Julia sets through command-line arguments
-    Psychedelic color mapping to visualize fractal depth
-    Clean window management and event handling for user interaction
+    1. Rendering of multiple fractal types (Mandelbrot and Julia sets required, Multibrot is a bonus)
+    2. Near-infinite zoom capability with the mouse wheel
+    3. Double-precision floating-point calculations for deep zoom accuracy
+    4. Parameter customization for Julia sets through command-line arguments
+    5. Psychedelic color mapping to visualize fractal depth
+    6. Clean window management and event handling for user interaction
 
 ### Libraries & Technologies
-    MiniLibX: A simplified X11 programming API providing basic graphical functions
-    Math Library: Used for complex number operations and calculations
-    Custom Libft Library: A self-implemented library of standard functions
+    1. MiniLibX: A simplified X11 programming API providing basic graphical functions
+    2. Math Library: Used for complex number operations and calculations
+    3. Custom Libft Library: A self-implemented library of standard functions
 
-### how to test?
+### How to test?
 Run the program with a fractal type
 # For Mandelbrot set
 ./fractol mandelbrot
