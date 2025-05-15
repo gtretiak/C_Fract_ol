@@ -33,7 +33,10 @@ Fractals are infinitely complex patterns that are self-similar across different 
     3. Custom Libft Library: A self-implemented library of standard functions
 
 ### How to test?
-Run the program with a fractal type
+1. Clone the repository
+2. Clone the Libft repository https://github.com/gtretiak/C_libft
+3. Compile with make command
+4. Run the program with a fractal type
 # For Mandelbrot set
 ./fractol mandelbrot
 
