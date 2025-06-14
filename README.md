@@ -38,6 +38,7 @@ Fractals are infinitely complex patterns that are self-similar across different 
 3. Clone the Minilibx (linux) repository https://github.com/42paris/minilibx-linux
 4. Compile with 'make' and 'make bonus' commands
 5. Run the program with a fractal type
+6. If needed go to mandelbrot_iterator, compile with gcc and run to understand complex computations and fractal borders (compile with -DITER=INT if needed) 
 # For Mandelbrot set
 ./fractol mandelbrot
 
