@@ -54,6 +54,9 @@ real_new = real² - imag² + c_real
 imag_new = 2 × real × imag + c_imag
 ```
 This mixing of real and imaginary parts creates the swirling, organic patterns.
+
 3. Chaos Theory Demo: The code shows how a deterministic system (simple formula) can exhibit chaotic behavior - tiny changes in c can dramatically change escape time.
+
 4. Computational Mathematics: This is exactly how fractal rendering works - test millions of points, count iterations, assign colors based on escape time.
+
 The beauty is that the 30-line program contains the entire mathematical engine that generates some of the most complex and beautiful patterns in mathematics!
