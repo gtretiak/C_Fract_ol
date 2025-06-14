@@ -6,7 +6,7 @@
 #    By: gtretiak <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/26 12:13:42 by gtretiak          #+#    #+#              #
-#    Updated: 2025/01/30 12:04:49 by gtretiak         ###   ########.fr        #
+#    Updated: 2025/06/14 16:54:30 by gtretiak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FRACTOL_LIB_B = fractol_bonus.a
 FRACTOL_LIB = fractol.a
 HEADER = fractol.h
 HEADER_B = fractol_bonus.h
-LIBFT_DIR = Libft/
+LIBFT_DIR = C_libft/
 LIBFT = libft.a
 MLX_DIR = minilibx-linux/
 MLX = libmlx_Linux.a
