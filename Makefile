@@ -33,6 +33,7 @@ MLX_FEATURES = -lX11 -lXext -lXrender -lXrandr -lm -lpthread
 all: $(LIBFT) $(MLX) $(FRACTOL_LIB) $(NAME)
 
 $(LIBFT):
+	git clone git@github.com:gtretiak/C_libft.git; \
 	@make -C $(LIBFT_DIR)
 
 $(MLX):
