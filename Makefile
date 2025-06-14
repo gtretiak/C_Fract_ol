@@ -6,7 +6,7 @@
 #    By: gtretiak <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/26 12:13:42 by gtretiak          #+#    #+#              #
-#    Updated: 2025/06/14 16:54:30 by gtretiak         ###   ########.fr        #
+#    Updated: 2025/06/14 21:34:56 by gtretiak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,28 @@ MLX_FEATURES = -lX11 -lXext -lXrender -lXrandr -lm -lpthread
 all: $(LIBFT) $(MLX) $(FRACTOL_LIB) $(NAME)
 
 $(LIBFT):
-	git clone git@github.com:gtretiak/C_libft.git; \
-	@make -C $(LIBFT_DIR)
+	@if [ -d $(LIBFT_DIR) ]; then \
+		echo "C_libft is already cloned"; \
+	else \
+		git clone git@github.com:gtretiak/C_libft.git $(LIBFT_DIR); \
+	fi
+	@if [ -f $(LIBFT_DIR)$(LIBFT) ]; then \
+		echo "libft.a is already compiled"; \
+	else \
+		$(MAKE) -C $(LIBFT_DIR); \
+	fi
 
 $(MLX):
-	@make -C $(MLX_DIR)
+	@if [ -d $(MLX_DIR) ]; then \
+		echo "minilibx-Linux is already cloned"; \
+	else \
+		git clone git@github.com:42paris/minilibx-linux.git $(MLX_DIR); \
+	fi
+	@if [ -f $(MLX_DIR)$(MLX) ]; then \
+		echo "mlx.a is already compiled"; \
+	else \
+		$(MAKE) -C $(MLX_DIR); \
+	fi
 
 $(FRACTOL_LIB): $(MLX_DIR)$(MLX) $(OBJS) $(HEADER) $(LIBFT_DIR)$(LIBFT)
 	ar -rc $(FRACTOL_LIB) $^
@@ -81,12 +98,14 @@ re_bonus: fclean_bonus bonus
 
 clean:
 	rm -f $(OBJS)
-	@make clean -C $(LIBFT_DIR)
-	@make clean -C $(MLX_DIR)
+	@if [ -d $(LIBFT_DIR) ]; then make clean -C $(LIBFT_DIR); fi
+	@if [ -d $(MLX_DIR) ]; then make clean -C $(MLX_DIR); fi
 
 fclean: clean
 	rm -f $(FRACTOL_LIB)
 	rm -f $(NAME)
 	@make fclean -C $(LIBFT_DIR)
+	rm -rf $(LIBFT_DIR)
+	rm -rf $(MLX_DIR)
 
 re: fclean all
