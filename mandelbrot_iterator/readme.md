@@ -16,7 +16,7 @@ Visual Beauty: The Mandelbrot set exhibits complex fractal structures when visua
 The program iterates the formula z = z² + c where:
 
 z starts at 0 + 0i
-c = -0.8 + 0.156i (a specific point you're testing)
+c = -0.8 + 0.156i (a specific point that might be changed)
 It runs 100 iterations to see if z "escapes to infinity"
 
 The values c = -0.8 + 0.156i aren't arbitrary - this point lies near the boundary of the Mandelbrot set, where the most interesting fractal behavior occurs. Points inside the set remain bounded (don't escape), while points outside grow infinitely large.
