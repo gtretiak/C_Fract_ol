@@ -35,8 +35,9 @@ Fractals are infinitely complex patterns that are self-similar across different 
 ### How to test?
 1. Clone the repository
 2. Clone the Libft repository https://github.com/gtretiak/C_libft
-3. Compile with make command
-4. Run the program with a fractal type
+3. Clone the Minilibx (linux) repository https://github.com/42paris/minilibx-linux
+4. Compile with 'make' and 'make bonus' commands
+5. Run the program with a fractal type
 # For Mandelbrot set
 ./fractol mandelbrot
 
