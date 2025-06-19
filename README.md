@@ -40,8 +40,6 @@ Fractals are infinitely complex patterns that are self-similar across different 
 
 ### How to test?
 1. Clone the repository
-<!--2. Clone the Libft repository https://github.com/gtretiak/C_libft
-3. Clone the Minilibx (linux) repository https://github.com/42paris/minilibx-linux-->
 2. Compile with 'make' and 'make bonus' commands
 3. Run the program with a fractal type
 4. If needed go to mandelbrot_iterator, compile with gcc and run to understand complex computations and fractal borders (compile with -DITER=INT if needed) 
