@@ -4,6 +4,11 @@
 ### Introduction
 Fract'ol is a computer graphics project focused on rendering beautiful mathematical fractals. The program should allow users to explore infinitely complex patterns by visualizing different fractal sets with interactive zoom capabilities and colorful rendering. This project demonstrates fundamental principles of computer graphics, complex number mathematics, and event-driven programming.
 ![Julia_set](images/julia_set.png)
+![Mandelbrot_zoom](images/mandelbrot_zoom.png)
+![Real_time_zoom](images/real_time_zoom.png)
+![Multibrot_set](images/multibrot_set.png)
+![Efficient_rendering](images/efficient_rendering.png)
+![C_written_from_scratch](images/c_written_from_scratch.png)
 
 ### Project Purpose & Objectives
     1. Gain proficiency with the MiniLibX (X11 simplified analog) graphics library
