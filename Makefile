@@ -6,7 +6,7 @@
 #    By: gtretiak <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/26 12:13:42 by gtretiak          #+#    #+#              #
-#    Updated: 2025/06/14 21:34:56 by gtretiak         ###   ########.fr        #
+#    Updated: 2025/06/19 13:01:51 by gtretiak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,13 +86,15 @@ $(NAME_B): $(FRACTOL_LIB_B) $(LIBFT) $(MLX) $(OBJS_B)
 
 clean_bonus:
 	rm -f $(OBJS_B)
-	@make clean -C $(LIBFT_DIR)
-	@make clean -C $(MLX_DIR)
+	@if [ -d $(LIBFT_DIR) ]; then make clean -C $(LIBFT_DIR); fi
+	@if [ -d $(MLX_DIR) ]; then make clean -C $(MLX_DIR); fi
 
 fclean_bonus: clean_bonus
-	rm -f $(FRACTOL_LIB_B)
-	rm -f $(NAME_B)
-	@make fclean -C $(LIBFT_DIR)
+	@if [ -f $(FRACTOL_LIB_B) ]; then rm -f $(FRACTOL_LIB_B); fi
+	@if [ -f $(NAME_B) ]; then rm -f $(NAME_B); fi
+	@if [ -d $(LIBFT_DIR) ]; then make fclean -C $(LIBFT_DIR); fi
+	@if [ -d $(LIBFT_DIR) ]; then rm -rf $(LIBFT_DIR); fi
+	@if [ -d $(MLX_DIR) ]; then rm -rf $(MLX_DIR); fi
 
 re_bonus: fclean_bonus bonus
 
@@ -102,10 +104,10 @@ clean:
 	@if [ -d $(MLX_DIR) ]; then make clean -C $(MLX_DIR); fi
 
 fclean: clean
-	rm -f $(FRACTOL_LIB)
-	rm -f $(NAME)
-	@make fclean -C $(LIBFT_DIR)
-	rm -rf $(LIBFT_DIR)
-	rm -rf $(MLX_DIR)
+	@if [ -f $(FRACTOL_LIB) ]; then rm -f $(FRACTOL_LIB); fi
+	@if [ -f $(NAME) ]; then rm -f $(NAME); fi
+	@if [ -d $(LIBFT_DIR) ]; then make fclean -C $(LIBFT_DIR); fi
+	@if [ -d $(LIBFT_DIR) ]; then rm -rf $(LIBFT_DIR); fi
+	@if [ -d $(MLX_DIR) ]; then rm -rf $(MLX_DIR); fi
 
 re: fclean all
