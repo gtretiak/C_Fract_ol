@@ -39,7 +39,7 @@ void	ft_putstr_fd(char *s, int fd)
 
 static int	ft_sign(char sign)
 {
-	if (sign == 45)
+	if (sign == 45) // ASCII for "-"
 		return (-1);
 	else
 		return (0);
