@@ -21,18 +21,18 @@ static void	ft_malloc_error(void)
 void	ft_settings(t_mlx *fractol)
 {
 	fractol->escape_value = 4;
-	fractol->iter = 50;
+	fractol->iter = 50; // initial detail level
 	fractol->shift_x = 0.0;
 	fractol->shift_y = 0.0;
-	fractol->zoom = 1.0;
+	fractol->zoom = 1.0; // no zoom
 }
 
 void	ft_events(t_mlx *fractol)
 {
-	mlx_hook(fractol->win, KeyPress, KeyPressMask, ft_handle_key, fractol);
-	mlx_mouse_hook(fractol->win, ft_handle_mouse, fractol);
+	mlx_hook(fractol->win, KeyPress, KeyPressMask, ft_handle_key, fractol); // hooks keyboard events
+	mlx_mouse_hook(fractol->win, ft_handle_mouse, fractol); // hooks mouse events
 	mlx_hook(
-		fractol->win, DestroyNotify, StructureNotifyMask, ft_close, fractol);
+		fractol->win, DestroyNotify, StructureNotifyMask, ft_close, fractol); // triggers on closing the window
 }
 
 void	ft_init(t_mlx *fractol)
@@ -55,10 +55,10 @@ void	ft_init(t_mlx *fractol)
 		free(fractol->mlx);
 		ft_malloc_error();
 	}
-	fractol->img.pixels = mlx_get_data_addr(fractol->img.img,
+	fractol->img.pixels = mlx_get_data_addr(fractol->img.img, // used to draw directly to the image buffer
 			&fractol->img.bpp,
 			&fractol->img.line_len,
 			&fractol->img.endian);
-	ft_events(fractol);
-	ft_settings(fractol);
+	ft_events(fractol); // set up input events
+	ft_settings(fractol); // apply default parameters
 }
