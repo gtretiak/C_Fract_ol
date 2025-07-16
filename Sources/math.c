@@ -13,7 +13,7 @@
 #include "fractol.h"
 
 double	ft_scale(double num, double new_min, double new_max, double old_max)
-{
+{ // scales a value "num" from an old range [0, old_max] to a new range [new_min, new_max]
 	return ((num - 0) / (old_max - 0) * (new_max - new_min) + new_min);
 }
 
