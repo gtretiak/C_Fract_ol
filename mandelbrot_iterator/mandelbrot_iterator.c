@@ -25,15 +25,15 @@ int     main(void)
 	} t_complex;
         int     i;
         double  tmp;
-        t_complex       z;
-        t_complex       c;
+        t_complex       z; // complex number to be iterated
+        t_complex       c; // constant complex number
 
         z.real = 0;
         z.imag = 0;
         c.real = -0.8;
         c.imag = 0.156;
         i = 0;
-        while (++i <= ITER)
+        while (++i <= ITER) 
         {
                 tmp = (z.real * z.real) - (z.imag * z.imag);
                 z.imag = 2 * z.real * z.imag;
