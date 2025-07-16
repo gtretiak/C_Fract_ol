@@ -17,7 +17,7 @@ void	ft_set(t_mlx *fractol, char *s)
 	fractol->name = s;
 	fractol->dance = 0; // disabling dance mode by default
 	ft_putstr_fd(1);
-	fractol->golden_ratio = 0;
+	fractol->golden_ratio = 0; // disabling golden_ratio mode by default
 }
 
 void	ft_set_julia(t_mlx *fractol, char *arg)
@@ -49,14 +49,14 @@ int	main(int argc, char **argv)
 		|| ((argc == 4 || argc == 3)
 			&& !ft_strncmp(argv[1], "Julia", 5)))
 	{
-		ft_set(&fractol, argv[1]);
+		ft_set(&fractol, argv[1]); // set fractal type
 		ft_init(&fractol);
 		if (argc == 4 && !ft_strncmp(argv[1], "Julia", 5))
-			ft_set_julia_four(&fractol, argv[2], argv[3]);
+			ft_set_julia_four(&fractol, argv[2], argv[3]); // full Julia type (with two points)
 		else if (argc == 3 && !ft_strncmp(argv[1], "Julia", 5))
-			ft_set_julia(&fractol, argv[2]);
-		ft_render(&fractol);
-		mlx_loop(fractol.mlx);
+			ft_set_julia(&fractol, argv[2]); // short Julia type
+		ft_render(&fractol); // draw the fractal
+		mlx_loop(fractol.mlx); // enter mlx loop
 	}
 	else
 	{
