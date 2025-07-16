@@ -50,7 +50,7 @@ static long	ft_get_int(char **str)
 	long	i;
 
 	i = 0;
-	while (**str != '.' && **str)
+	while (**str != '.' && **str) // as long as current char is not "." and not the NULL terminator we continue
 	{
 		i *= 10;
 		i = i + (**str - '0');
