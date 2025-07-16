@@ -15,7 +15,7 @@
 void	ft_set(t_mlx *fractol, char *s)
 {
 	fractol->name = s;
-	fractol->dance = 0;
+	fractol->dance = 0; // disabling dance mode by default
 	ft_putstr_fd(1);
 	fractol->golden_ratio = 0;
 }
