@@ -16,10 +16,10 @@ void	ft_pixel_put(int x, int y, t_img *img, int color)
 {
 	int	offset;
 
-	if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT)
+	if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) // we use WIDTH and HEIGHT to prevent drawing outside the image area
 		return ;
-	offset = (img->line_len * y) + (x * (img->bpp / 8));
-	*((unsigned int *)(img->pixels + offset)) = color;
+	offset = (img->line_len * y) + (x * (img->bpp / 8)); // calculating the pixel´s row offset and column offset in memory
+	*((unsigned int *)(img->pixels + offset)) = color; // writing with the given color
 }
 
 static void	ft_determine_type(t_complex *z, t_complex *c)
@@ -39,20 +39,20 @@ void	ft_handle_pixels(int x, int y, t_mlx *fractol)
 	z.x = ft_scale(x, -2.0, 0.9, WIDTH) * fractol->zoom + fractol->shift_x;
 	z.y = ft_scale(y, 1.8, -1.8, HEIGHT) * fractol->zoom + fractol->shift_y;
 	ft_determine_type(&z, &c);
-	while (i < fractol->iter)
+	while (i < fractol->iter) // iterating throuhg all pixels until max iteration number
 	{
 		z = ft_pow_complex(z, fractol->power);
 		z = ft_sum_complex(z, c);
-		if ((z.x * z.x) + (z.y * z.y) > fractol->escape_value)
+		if ((z.x * z.x) + (z.y * z.y) > fractol->escape_value) // or until escape conditions
 		{
 			color = ft_scale(i + fractol->color_shift,
 					0x000000, 0xffffff, fractol->iter);
-			ft_pixel_put(x, y, &fractol->img, color);
+			ft_pixel_put(x, y, &fractol->img, color); // drawing colored pixel
 			return ;
 		}
 		i++;
 	}
-	ft_pixel_put(x, y, &fractol->img, 0xccff00);
+	ft_pixel_put(x, y, &fractol->img, 0xccff00); // drawing fixed color
 }
 
 void	ft_render(t_mlx *fractol)
@@ -65,7 +65,7 @@ void	ft_render(t_mlx *fractol)
 	{
 		x = 0;
 		while (x++ < WIDTH)
-			ft_handle_pixels(x, y, fractol);
+			ft_handle_pixels(x, y, fractol); // filling the rectangle (image)
 	}
-	mlx_put_image_to_window(fractol->mlx, fractol->win, fractol->img.img, 0, 0);
+	mlx_put_image_to_window(fractol->mlx, fractol->win, fractol->img.img, 0, 0); // displaying the completed image
 }
