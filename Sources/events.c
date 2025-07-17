@@ -24,11 +24,9 @@ int	ft_close(t_mlx *fractol)
 
 int	ft_handle_mouse(int button, int x, int y, t_mlx *fractol)
 {
-	int	x_init;
-	int	y_init;
+	(void)x;
+	(void)y;
 
-	x_init = x;
-	y_init = y;
 	if (button == 5) // scroll up - zoom in
 		fractol->zoom *= 1.1; 
 	else if (button == 4) // scroll down - zoom out
