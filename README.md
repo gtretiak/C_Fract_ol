@@ -41,7 +41,7 @@ Fractals are infinitely complex patterns that are self-similar across different 
 ### How to test?
 1. Clone the repository
 2. Compile with 'make' and 'make bonus' commands
-3. If an error occurs, install dependencies: `sudo apt install libx11-dev libxext-dev libbsd-dev libxrender-dev libxrandr-dev`
+3. If an error occurs, install dependencies: `sudo apt install libx11-dev libxext-dev libbsd-dev libxrender-dev libxrandr-dev` and repeat the step 2
 4. Run the program with a fractal type
 5. If needed go to mandelbrot_iterator, compile with gcc and run to understand complex computations and fractal borders (compile with -DITER=INT if needed) 
 # For Mandelbrot set
